@@ -17,21 +17,21 @@ public class EmployeeConfig{
     @Bean
     CommandLineRunner commandLineRunner(EmployeeRepository repository){
         return args -> {
-            Employee maroun = new Employee(
+            Employee johnSmith = new Employee(
                     "John",
                     "Smith",
                     "johnsmith@gmail.com",
                     LocalDate.of(2000, Month.SEPTEMBER, 12),
                     Department.DEVELOPMENT
             );
-            Employee john = new Employee(
+            Employee johnDoe = new Employee(
                     "John",
                     "Doe",
                     "johndoe@hotmail.com",
                     LocalDate.of(1990, Month.JANUARY, 10),
                     Department.HR
             );
-            repository.saveAll(List.of(maroun,john));
+            repository.saveAll(List.of(johnSmith,johnDoe));
         };
     }
 }
